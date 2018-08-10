@@ -4,7 +4,7 @@ lijst = " ".join(sys.argv)
 lijst = lijst.split("-")
 f = (lijst[0].strip().split(" ")[-1]).strip()
 if lijst[1] == "help" or lijst[1] == "h":
-    print "This script converts a Bedtools genomecov txt into a gtf file\n\
+    print ("This script converts a Bedtools genomecov txt into a gtf file\n\
 tijs bliek (bliek@uva.nl)\n\n\
 usage: python genomeCov_to_gtf.py [filename] [options]\n\n\
 options:\n\
@@ -13,7 +13,7 @@ filename\t\tname and path of file to be converted, should be a bedtools genomeco
 -coverage=[INT]\t\tmin level of coverage for it to produce a feature (default = 10)\n\
 -gapsize=[INT]\t\tmaximum length of gap between two features for them to be fused to one (default = 100)\n\
 -maxlength=[INT]\tmaximum length of a feature for it to be writen to gtf-file (default = 2000)\n\
--minlength=[INT]\tminimum length of a feature for it to be writen to gtf-file (default = 100)\n\n " 
+-minlength=[INT]\tminimum length of a feature for it to be writen to gtf-file (default = 100)\n\n") 
     sys.exit()
 
 args = {}
@@ -70,8 +70,8 @@ else: c = 2000
 if "minlength" in args:
     d = args["minlength"]
 else: d = 100
-print "name of input file:",f,"\nname of output file: ",f.split(".")[0] + ".gtf\
+print ("name of input file:",f,"\nname of output file: ",f.split(".")[0] + ".gtf\
 \nminimum depth of coverage:", a ,\
 "\nmaximum length of gaps within a feature:",b,\
 "\nminimum and maximum length of features:",c, " and ",d,\
-"\nnumber of found features:", GtG(f,a,b,c,d)
+"\nnumber of found features:", GtG(f,a,b,c,d))
